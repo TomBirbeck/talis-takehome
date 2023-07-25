@@ -7,7 +7,7 @@ export class Element {
   constructor(value, next = null) {
     this.value = value;
     this.next = next;
-}
+  }
 }
 
 export class List {
@@ -16,8 +16,8 @@ export class List {
     if(arr){
       for (let i = 0; i < arr.length; i++) {
         this.add(new Element(arr[i]));
+        }
       }
-    }
     }
 
   add(nextValue) {
@@ -45,12 +45,12 @@ export class List {
   }
 
   reverse() {
-    const list = new List();
+    const reversedList = new List();
     let current = this.head;
     while(current){
-      list.add(new Element(current.value));
+      reversedList.add(new Element(current.value));
       current = current.next
     }
-    return list;
+    return reversedList;
   }
 }
