@@ -53,4 +53,16 @@ export class List {
     }
     return reversedList;
   }
+
+  insertAfterNumber(value, number){
+    let current = this.head;
+    while(current.next && current.value !== number){
+      current = current.next;
+    } 
+    if(current.value === number){
+      const newValue = new Element(value, current.next);
+      current.next = newValue;
+    }
+    return this
+  }
 }

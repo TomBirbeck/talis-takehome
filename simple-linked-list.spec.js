@@ -129,3 +129,16 @@ describe('Lists with multiple elements', () => {
     ]);
   });
 });
+describe('inserting values into diffrent points in the list', () => {
+  test('inserting value after a number in list should return list in correct order', () => {
+    const list = new List([1, 2, 3]);
+
+    expect(list.insertAfterNumber(4,2).toArray()).toEqual([3,2,4,1]);
+  })
+  test('inserting after a number that does not exist should not alter list', () => {
+    const list = new List([1,2,3]);
+    
+    expect(list.insertAfterNumber(4,4).length).toBe(3);
+    expect(list.insertAfterNumber(4,4).toArray()).toEqual([3,2,1]);
+  })
+})
